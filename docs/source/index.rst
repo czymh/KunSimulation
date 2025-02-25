@@ -1,5 +1,5 @@
 Welcome to Kun Universe!
-=========================================
+========================
 
 .. image:: ./pic/kun.jpg
       :alt: KUN

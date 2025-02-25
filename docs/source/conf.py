@@ -10,8 +10,8 @@ import sys
 import sphinx_rtd_theme
 sys.path.insert(0, os.path.abspath('../../'))
 
-project = 'CSST Emulator'
-copyright = '2024, Zhao Chen' #(陈钊)
+project = 'Kun Universe'
+copyright = '2025, Zhao Chen' #(陈钊)
 author = 'Zhao Chen'
 
 release = '0.1'
