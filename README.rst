@@ -1,4 +1,4 @@
-CSST Emulator docs
+Kun Simulation suite docs
 =======================================
 
-https://csst-emulator.readthedocs.io
+https://kunsimulation.readthedocs.io

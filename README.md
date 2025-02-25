@@ -1,11 +1,10 @@
-## China Space Station Telescope (CSST) Emulator
+## Kun Universe
 
-A python package for CSST cosmological emulator.
-This package is only dependent on `numpy`, `scipy` packages.
-All the gaussian process trainings have been done in advance.
-The whole package predicts the cosmological statistics [e.g., nonlinear matter power spectrum] with ~ **1 millisecond per cosmology**.
+This simulation suite is designed for the emulator construction of China Space Station Telescope ([CSST Emulator](https://csst-emulator.readthedocs.io/en/latest/)).
+Kun is a mythological creature in Chinese culture, which is a giant fish and can become a huge bird on the sky.
+Here, we named our simulation suite as **Kun Universe**, highlighting the size and variability of the simulation suite.
+The cosmological parameter space are shown as followed:
 
-The parameter space are shown as followed:
 | Parameter | Lower Limit | Upper Limit |
 | --------- | ----------- | ----------- |
 | $\Omega_b$          | 0.04  | 0.06    |
