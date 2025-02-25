@@ -5,7 +5,8 @@ Welcome to Kun Universe!
       :alt: KUN
       :width: 100%
 
-**Kun Universe** is an extensive simulation suite designed for the emulator construction of the China Space Station Telescope (**CSST**) optical survey `CSST Emulator <https://github.com/czymh/csstemu>`_.
+
+**Kun Universe** is an extensive simulation suite designed for the emulator construction of the China Space Station Telescope (CSST) optical survey, known as `CSST Emulator <https://github.com/czymh/csstemu>`_.
 In Chinese mythology, *Kun* (**鲲**) is an extraordinary and mythical creature. 
 It is depicted as an immense fish dwelling in the boundless northern sea. 
 *Kun* has an extraordinary ability - it can transform into a gigantic bird named *Peng* (**鹏**). 

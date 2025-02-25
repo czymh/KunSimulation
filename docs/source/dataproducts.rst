@@ -17,7 +17,7 @@ We output **12** snapshots at fixed redshifts of ``z = {3.00, 2.50, 2.00, 1.75, 
 The total storage size for the whole simulation suite is about **3.1 PB**.
 The directory of each simulation output is named as ``csst/simulation/cXXXX/output/``, where ``XXXX`` is the cosmology index from 0000 - 0128.
 
-The key data products are listed as follows. The corresponding usage is available in the `github repo <https://github.com/czymh/csst-simulations-read>`_.
+The key data products are listed as follows. The corresponding Python scripts is available in the `github repo <https://github.com/czymh/csst-simulations-read>`_.
 
 Particle Data
 ~~~~~~~~~~~~~
