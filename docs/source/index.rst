@@ -53,6 +53,7 @@ Contents
    dataproducts
    visualization
    citation
+   publication
 
 Acknowledgement
 ---------------

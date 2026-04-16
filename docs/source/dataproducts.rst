@@ -101,9 +101,9 @@ According to the different cosmologies, the storage size may vary.
 +------------------------------+--------+------------------------------------------------+-------------+
 | Data Products                | Server | File Name                                      | Storge Size |
 +==============================+========+================================================+=============+
-| Snapshot                     | K      | snapdir_xxx_down64/snapshot_xxx_down64.*.hdf5  | ~ 6.6 TB    |
+| Snapshot                     | K      | snapdir_xxx/snapshot_xxx.*.hdf5                | ~ 6.6 TB    |
 +------------------------------+--------+------------------------------------------------+-------------+
-| Snapshot 1/64 subsample      | K      | snapdir_xxx/snapshot_xxx.*.hdf5                | ~ 132 GB    |
+| Snapshot 1/64 subsample      | K & G  | snapdir_xxx_down64/snapshot_xxx_down64.*.hdf5  | ~ 132 GB    |
 +------------------------------+--------+------------------------------------------------+-------------+
 | Particle Lightcone           | K      | lightcone_xx/conedir_yyyy/conesnap_yyyy.*.hdf5 | ~ 18  TB    |
 +------------------------------+--------+------------------------------------------------+-------------+
@@ -115,7 +115,7 @@ According to the different cosmologies, the storage size may vary.
 +------------------------------+--------+------------------------------------------------+-------------+
 | Matter Density Field         | K & G  | mesh_xxx/mesh_xxx_CIC_Nmesh1536.*.hdf5         | ~ 156 GB    |
 +------------------------------+--------+------------------------------------------------+-------------+
-| Full-sky Mass Map            | K      | mapsdir_xxx/maps_xxx.*.hdf5                    | ~ 225 GB    |
+| Full-sky Mass Map            | K & G  | mapsdir_xxx/maps_xxx.*.hdf5                    | ~ 225 GB    |
 +------------------------------+--------+------------------------------------------------+-------------+
 | :math:`\kappa` Map (Born)    | K & G  | kappas/kappa-nbox*-thickness50-8192.bin        | ~ 250 GB    |
 +------------------------------+--------+------------------------------------------------+-------------+
