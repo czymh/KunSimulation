@@ -4,7 +4,7 @@ Projects
 Publication
 ~~~~~~~~~~~~
 
-Publications mean the achievements of the projects based on the **Kun** simulation suite
+Publications mean the achievements of the projects based on the **Kun** simulation suite (related `ads library <https://ui.adsabs.harvard.edu/user/libraries/HmogSP7pQ2mJGCUovnBHGg>`_): 
 
 #. | **MIU2Net: weak-lensing mass inversion using deep learning with nested U-structures**
    | G. Han W., An Zhao, Xinyue Chen, Ran Li, Rui Li, Xiangkun Liu, Zhao Chen, and Yu Yu.
