@@ -120,5 +120,9 @@ According to the different cosmologies, the storage size may vary.
 | :math:`\kappa` Map (Born)    | K & G  | kappas/kappa-nbox*-thickness50-8192.bin        | ~ 250 GB    |
 +------------------------------+--------+------------------------------------------------+-------------+
 
+.. note::
+   * For the downsampled particle samples across all snapshots, the particles share the same IDs.
+   * The `["Header"].attrs["MassTable"]` in the downsampled particle samples is the same as that in the full particle samples. Please time 64 to get the mass of each particle type in the downsampled samples.
+
 All analysis scripts (:py:attr:`Python`) is available in the `github repo <https://github.com/czymh/csst-simulations-read>`_.
 
