@@ -16,12 +16,12 @@
 #. | **CSST cosmological emulator I: Matter power spectrum emulation with one percent accuracy to k = 10h Mpc<SUP>−1</SUP>**
    | Zhao Chen, Yu Yu, Jiaxin Han, Yipeng Jing
    | `2025SCPMA..6889512C <https://ui.adsabs.harvard.edu/abs/2025SCPMA..6889512C>`_
-#. | **CSST cosmological emulator II: Generalized accurate halo mass function emulation**
-   | Zhao Chen, Yu Yu
-   | `2025SCPMA..6809513C <https://ui.adsabs.harvard.edu/abs/2025SCPMA..6809513C>`_
 #. | **The Jiutian simulations for the CSST extra-galactic surveys**
    | Jiaxin Han, Ming Li, Wenkang Jiang, Zhao Chen, Huiyuan Wang, Chengliang Wei, Feihong He, Jianhua He, Jiajun Zhang, Yu Liu, Weiguang Cui, Yizhou Gu, Qi Guo, Yipeng Jing, Xi Kang, Guoliang Li, Xiong Luo, Yu Luo, Wenxiang Pei, Yisheng Qiu, Zhenlin Tan, Lizhi Xie, Xiaohu Yang, Haoran Yu, Yu Yu, Jiale Zhou
    | `2025SCPMA..6809511H <https://ui.adsabs.harvard.edu/abs/2025SCPMA..6809511H>`_
+#. | **CSST cosmological emulator II: Generalized accurate halo mass function emulation**
+   | Zhao Chen, Yu Yu
+   | `2025SCPMA..6809513C <https://ui.adsabs.harvard.edu/abs/2025SCPMA..6809513C>`_
 #. | **Artifacts in Halo Shapes: Imprints of the Initial Condition**
    | Yu Yu, Zhao Chen
    | `2025arXiv250716745Y <https://ui.adsabs.harvard.edu/abs/2025arXiv250716745Y>`_
