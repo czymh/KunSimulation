@@ -86,6 +86,10 @@ The weak lensing convergence map is saved in the binary format for :math:`z_s \i
 The files are named as ``kappas/kappa-nbox*-thickness50-8192.bin``, where ``*`` represents the used number of shells.
 The corresponding source redshift is ``nbox * thickness``.
 
+.. note::
+   * ``kappas/kappa-nbox*-thickness50-8192.bin`` only contain the cb component due to the limitation of the Newtonian-motion gauge method.
+   * ``kappas-tot/kappa-tot-w-lin-nu-nbox*-thickness50-downfrom8192-1024.bin`` is created by combing the simulated cb component and the linear neutrino component. We have validated that these maps' statistics are sub-percent level different from the true nonlinear neutrino component by using FLAMINGO simulation. For now, we only provide maps with `nside=1024` due to the storage limitation.
+
 
 Table of Data Products
 ----------------------
