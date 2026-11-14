@@ -4,7 +4,7 @@ Projects
 Publication
 ~~~~~~~~~~~~
 
-Publications mean the achievements of the projects based on the **Kun** simulation suite (related `ads library <https://ui.adsabs.harvard.edu/user/libraries/HmogSP7pQ2mJGCUovnBHGg>`_): 
+Publications mean the achievements of the projects based on the **Kun** simulation suite (related `SciX library <https://scixplorer.org/public-libraries/HmogSP7pQ2mJGCUovnBHGg>`_):
 
 .. include:: publications_auto.rst
 

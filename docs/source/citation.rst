@@ -21,7 +21,7 @@ If you have used data from the **Kun** simulation suite, you may consider citing
       archivePrefix = {arXiv},
              eprint = {2502.11160},
        primaryClass = {astro-ph.CO},
-             adsurl = {https://ui.adsabs.harvard.edu/abs/2025SCPMA..6889512C},
+             adsurl = {https://scixplorer.org/abs/2025SCPMA..6889512C},
             adsnote = {Provided by the SAO/NASA Astrophysics Data System}
         }
     
@@ -40,7 +40,7 @@ If you have used data from the **Kun** simulation suite, you may consider citing
       archivePrefix = {arXiv},
              eprint = {2506.09688},
        primaryClass = {astro-ph.CO},
-             adsurl = {https://ui.adsabs.harvard.edu/abs/2025SCPMA..6809513C},
+             adsurl = {https://scixplorer.org/abs/2025SCPMA..6809513C},
             adsnote = {Provided by the SAO/NASA Astrophysics Data System}
         }
 
@@ -59,7 +59,7 @@ If you have used data from the **Kun** simulation suite, you may consider citing
       archivePrefix = {arXiv},
              eprint = {2506.04671},
        primaryClass = {astro-ph.CO},
-             adsurl = {https://ui.adsabs.harvard.edu/abs/2025SCPMA..6829512Z},
+             adsurl = {https://scixplorer.org/abs/2025SCPMA..6829512Z},
             adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
@@ -69,7 +69,7 @@ If you have used data from the **Kun** simulation suite, you may consider citing
 
 
 
-If you have used the particle lightcone data, you may consider citing the `Box replication effect paper <https://ui.adsabs.harvard.edu/abs/2024MNRAS.534.1205C/abstract>`_ for the special line-of-sight directions:
+If you have used the particle lightcone data, you may consider citing the `Box replication effect paper <https://scixplorer.org/abs/2024MNRAS.534.1205C/abstract>`_ for the special line-of-sight directions:
 
 .. code-block:: bibtex
 
@@ -87,7 +87,7 @@ If you have used the particle lightcone data, you may consider citing the `Box r
       archivePrefix = {arXiv},
              eprint = {2312.05117},
        primaryClass = {astro-ph.CO},
-             adsurl = {https://ui.adsabs.harvard.edu/abs/2024MNRAS.534.1205C},
+             adsurl = {https://scixplorer.org/abs/2024MNRAS.534.1205C},
             adsnote = {Provided by the SAO/NASA Astrophysics Data System}
     }
 

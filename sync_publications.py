@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
-"""Sync the publication list on the Kun Universe docs from a NASA ADS library.
+"""Sync the publication list on the Kun Universe docs from a SciX library.
 
-Fetches the ADS library's bibcodes, resolves structured metadata through the
-ADS search API, and writes `docs/source/publications_auto.rst` (the Sphinx
+Fetches the SciX library's bibcodes, resolves structured metadata through the
+SciX search API, and writes `docs/source/publications_auto.rst` (the Sphinx
 `publication.rst` page pulls it in via `.. include::`).
 
+SciX (https://scixplorer.org) supersedes the NASA ADS website; it exposes the
+same `/v1` REST API under a new host.
+
 Environment:
-    ADS_API_TOKEN   ADS API token (required, from ui.adsabs.harvard.edu/user/settings/token)
-    ADS_LIB_ID      Library id (optional; defaults to the Kun publication library)
+    SCIX_API_TOKEN  SciX API token (required, from scixplorer.org/user/settings/token;
+                    falls back to ADS_API_TOKEN for backwards compatibility)
+    SCIX_LIB_ID     Library id (optional; defaults to the Kun publication library;
+                    falls back to ADS_LIB_ID)
 
 Usage:
     python sync_publications.py [--dry-run]   # --dry-run prints RST instead of writing
@@ -21,8 +26,10 @@ import urllib.request
 import urllib.parse
 import urllib.error
 
-API = "https://api.adsabs.harvard.edu/v1"
+API = "https://api.scixplorer.org/v1"
 DEFAULT_LIB_ID = "HmogSP7pQ2mJGCUovnBHGg"  # Kun Universe publication library
+TOKEN_URL = "https://scixplorer.org/user/settings/token"
+ABS_URL = "https://scixplorer.org/abs/{bibcode}/abstract"
 FIELDS = ["bibcode", "title", "author", "year", "pubdate", "pub", "doi"]
 ROWS = 200
 
@@ -45,14 +52,13 @@ def _request(method, url, payload=None, token=None):
     except urllib.error.HTTPError as err:
         detail = err.read().decode("utf-8", "replace")[:500]
         hint = {
-            401: "ADS_API_TOKEN is invalid or revoked — regenerate at "
-                 "https://ui.adsabs.harvard.edu/user/settings/token",
+            401: "SCIX_API_TOKEN is invalid or revoked — regenerate at " + TOKEN_URL,
             403: "token cannot access the library — confirm the library belongs to "
-                 "the same ADS account that owns the token",
-            404: "library not found — check ADS_LIB_ID",
+                 "the same SciX account that owns the token",
+            404: "library not found — check SCIX_LIB_ID",
             400: "bad request — check query/fields in the script",
         }.get(err.code, "")
-        raise SystemExit(f"ADS API {err.code} {err.reason} on {method} {url}\n  {hint}\n  {detail}") from None
+        raise SystemExit(f"SciX API {err.code} {err.reason} on {method} {url}\n  {hint}\n  {detail}") from None
 
 
 def get_library_documents(lib_id, token):
@@ -66,7 +72,7 @@ def get_library_documents(lib_id, token):
         metadata = data.get("metadata") or {}
         if total is None:
             total = metadata.get("num_documents", 0)
-            print(f"[ads] library '{metadata.get('name', lib_id)}': {total} papers")
+            print(f"[scix] library '{metadata.get('name', lib_id)}': {total} papers")
         batch = data.get("documents") or []
         docs.extend(batch)
         start += rows
@@ -103,7 +109,7 @@ def search_docs(bibcodes, token):
 
 
 def display_name(raw):
-    """ADS author strings may be 'Family, Given' — normalize to 'Given Family'."""
+    """SciX author strings may be 'Family, Given' — normalize to 'Given Family'."""
     raw = (raw or "").strip()
     if ", " in raw:
         fam, given = raw.split(", ", 1)
@@ -125,11 +131,11 @@ def rst_escape(text):
 
 
 def build_rst_publication(doc):
-    """Format one ADS record as a three-line RST enumerated-list item."""
+    """Format one SciX record as a three-line RST enumerated-list item."""
     title = rst_escape(first_str(doc.get("title")))
     authors = ", ".join(display_name(a) for a in (doc.get("author") or []))
     bibcode = doc.get("bibcode") or ""
-    link = f"https://ui.adsabs.harvard.edu/abs/{bibcode}"
+    link = ABS_URL.format(bibcode=bibcode)
     return (
         f"#. | **{title}**\n"
         f"   | {authors}\n"
@@ -143,24 +149,26 @@ def main():
                         help="print RST to stdout instead of writing the file")
     args = parser.parse_args()
 
-    token = os.environ.get("ADS_API_TOKEN", "").strip()
+    token = (os.environ.get("SCIX_API_TOKEN")
+             or os.environ.get("ADS_API_TOKEN") or "").strip()
     if not token:
-        print("ERROR: ADS_API_TOKEN is not set. Get one at "
-              "https://ui.adsabs.harvard.edu/user/settings/token", file=sys.stderr)
+        print(f"ERROR: SCIX_API_TOKEN is not set. Get one at {TOKEN_URL}",
+              file=sys.stderr)
         sys.exit(1)
-    lib_id = os.environ.get("ADS_LIB_ID", DEFAULT_LIB_ID).strip()
+    lib_id = (os.environ.get("SCIX_LIB_ID")
+              or os.environ.get("ADS_LIB_ID") or DEFAULT_LIB_ID).strip()
 
     bibcodes = get_library_documents(lib_id, token)
     docs = search_docs(bibcodes, token)
 
     items = [build_rst_publication(d) for d in docs]
     header = (
-        ".. This file is auto-generated by sync_publications.py from the NASA ADS\n"
+        ".. This file is auto-generated by sync_publications.py from the SciX\n"
         "   library. Do not edit by hand.\n"
         "\n"
     )
     blob = header + "\n".join(items) + "\n"
-    print(f"[ads] wrote {len(items)} publications to {os.path.relpath(OUTPUT)}")
+    print(f"[scix] wrote {len(items)} publications to {os.path.relpath(OUTPUT)}")
 
     if args.dry_run:
         sys.stdout.write(blob)
